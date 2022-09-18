@@ -3,8 +3,11 @@ Project for CS300
 
 Run the project in VS Code by debugger 
 
-In terminal
-`./env/Scripts/activate`
+First install all dependecies using 
+
+`pip install -r requirements.txt`
+
+Then start a django server by
 
 `python manage.py runserver 9000`
 
