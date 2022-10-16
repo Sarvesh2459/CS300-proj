@@ -1,0 +1,32 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+</head>  
+<body>  
+<form method="POST" class="post-form">  
+    <table border="2">
+        <tr>
+            <th>Question Id</th>
+            <th>Question Name</th>
+            <th>Language</th>
+            <th>Date And Time</th>
+            <th>Verdict</th>
+        </tr>
+        {% csrf_token %}  
+        {% for question in data %}
+        <tr>
+    <td>{{ question|slice:"0:1"}}</td>
+    <td>{{ question|slice:"1:2"}}</td>
+    <td>{{ question|slice:"2:3"}}</td>
+    <td>{{ question|slice:"3:4"}}</td>
+    <td>{{ question|slice:"4:5"}}</td>
+    </tr>
+
+
+{% endfor %}
+</table>
+</form>  
+</body>  
+</html>  
