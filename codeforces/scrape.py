@@ -15,6 +15,7 @@ def All_User_data(request):
 class Scrape:
     def __init__(self,uid):
         self.uid = uid
+        self.done = False
         self.handle()
     def handle(self):
         import requests
@@ -56,6 +57,7 @@ class Scrape:
             one_question.append(date_time[i].rstrip().lstrip())
             one_question.append(verdict[i].rstrip().lstrip())
             all_questions.append(one_question)
+        self.done = True
         
         # print(all_questions)
         self.soup = soup

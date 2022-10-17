@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .forms import StudentForm
 from .scrape import Scrape
 from codeforces import scrape
@@ -9,5 +9,7 @@ def sayhello(request):
     if request.method == 'POST':
         uid = request.POST['id']
         sc = Scrape(uid)
+        if sc.done == True:
+            return redirect('/codeforces/data/')
     
     return render(request,"index.html",{'form':student})  
